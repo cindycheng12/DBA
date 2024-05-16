@@ -19,12 +19,6 @@ COMMIT;
 SELECT * FROM employee WHERE employee_Add LIKE '台南市東區%';
 
 (2)
-//待研究
-  SELECT 
-    employee_id,
-    employee_Name,
-    CONCAT_WS('市',SUBSTRING_INDEX(employee_Add, '市', 1), '') AS city,
-    CONCAT_WS('區', SUBSTRING_INDEX(SUBSTRING_INDEX(employee_Add, '市', -1), '區', 1), '') AS zone,
-    TRIM(SUBSTRING_INDEX(SUBSTRING_INDEX(employee_Add, '區', -1), ' ', -1)) AS address
-FROM employee
-WHERE employee_Add LIKE '%台南市%';
+SELECT employee_id, employee_Name, city, zone, address 
+FROM employee_new 
+WHERE city = '台南市';
