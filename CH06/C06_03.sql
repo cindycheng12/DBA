@@ -8,6 +8,8 @@ PRIMARY KEY (OrderId)
 )
 
 
+INSERT INTO Orders (OrderId, ProductName, OrderDate) 
+VALUES (0, 'Computer',CURRENT_TIMESTAMP);
 
-待改
-?????INSERT INTO orders (ProductName, OrderDate) VALUES ('Computer', NOW());
+SELECT * FROM Orders WHERE OrderId = 0;
+
